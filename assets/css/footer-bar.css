@@ -1,0 +1,10 @@
+.footer-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: auto;
+  padding: 8px;
+
+  color: #aaa;
+}

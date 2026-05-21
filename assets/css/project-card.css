@@ -1,0 +1,100 @@
+.project-card {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: var(--bg);
+  background-size: cover;
+  background-position: center;
+
+  will-change: transform;
+
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover::before {
+  transform: scale(1.08);
+}
+
+.gradient {
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+
+  height: 100%;
+  width: 100%;
+  background:
+      linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 50%);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.project-card:hover .gradient {
+  opacity: 1;
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+
+  padding-left: 8px;
+  padding-bottom: 8px;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.extra {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+
+.project-card:hover .extra {
+  max-height: 120px;
+  opacity: 1;
+}
+
+.desc {
+  font-size: 12px;
+  max-width: 90%;
+  color: rgba(255,255,255);
+}
+
+.project-tags {
+  font-size: 12px;
+  color: rgba(255,255,255);
+}
+
+.desc,
+.project-tags {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.project-card:hover .desc,
+.project-card:hover .project-tags {
+  opacity: 1;
+}

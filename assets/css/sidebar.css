@@ -1,0 +1,54 @@
+.sidebar {
+  width: 240px;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  padding: 24px 24px 24px 24px;
+  gap: 8px;
+}
+
+.sidebar .top {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar .top p {
+  font-size: large;
+}
+
+.sidebar .navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sidebar .nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar a {
+  font-size: xx-large;
+  font-weight: 900;
+  color: black;
+}
+
+.sidebar .bottom {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 8px;
+}
+
+.sidebar .bottom a {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 8px;
+}

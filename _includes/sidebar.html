@@ -1,0 +1,35 @@
+<div class="sidebar">
+  <div class="top">
+    <div class="title">
+      <h1>{{ site.title }}</h1>
+      <p>{{ site.description }}</p>
+    </div>
+    <nav class="navigation">
+      <div class="nav-group">
+        {% for item in site.data.navigation %}
+          <a href="{{ item.link }}">
+            {{ item.name }}
+          </a>
+        {% endfor %}
+      </div>
+      <div class="nav-group">
+        {% for item in site.data.navigation-content %}
+          <a href="{{ item.link }}">
+            {{ item.name }}
+          </a>
+        {% endfor %}
+      </div>
+    </nav>
+  </div>
+  <div class="bottom">
+    <nav class="navigation-social">
+      <div class="nav-group">
+        {% for item in site.data.navigation-social %}
+          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">
+            {{ item.name }}
+          </a>
+        {% endfor %}
+      </div>
+    </nav>
+  </div>
+</div>

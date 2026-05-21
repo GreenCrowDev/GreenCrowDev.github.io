@@ -1,0 +1,10 @@
+.post-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-entry a {
+  color: black;
+  font-weight: 700; 
+}

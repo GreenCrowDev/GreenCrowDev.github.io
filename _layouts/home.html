@@ -1,0 +1,116 @@
+---
+title: Home
+---
+
+{% assign p1 = site.projects | where: "slug", "test-project" | first %}
+{% assign p2 = site.projects | where: "slug", "test-project-2" | first %}
+
+{% assign all = site.projects | sort: "date" | reverse %}
+
+{% assign exclude_slugs = "test-project,another-project" | split: "," %}
+
+{% assign secondary = "" | split: "," %}
+
+{% for project in all %}
+  {% unless exclude_slugs contains project.slug %}
+    {% assign secondary = secondary | push: project %}
+  {% endunless %}
+{% endfor %}
+
+{% assign s1 = secondary[0] %}
+{% assign s2 = secondary[1] %}
+{% assign s3 = secondary[2] %}
+
+<link rel="stylesheet" href="/assets/css/sidebar.css">
+<link rel="stylesheet" href="/assets/css/project-card.css">
+<link rel="stylesheet" href="/assets/css/section-header.css">
+<link rel="stylesheet" href="/assets/css/post-entry.css">
+<link rel="stylesheet" href="/assets/css/footer-bar.css">
+
+<style>
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    font-family: monospace;
+  }
+
+  .layout {
+    display: flex;
+    height: 100vh;
+  }
+
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: #fff;
+
+    gap: 8px;
+  }
+
+  .projects {
+    display: grid;
+  }
+
+  .featured-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .secondary-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 4px 16px 4px 16px;
+  }
+
+  @media (max-width: 768px) {
+    .featured-projects {
+        grid-template-columns: 1fr;
+    }
+    .secondary-projects {
+        display: none;
+    }
+  }
+</style>
+
+<div class="layout">
+  {% include sidebar.html %}
+
+  <div class="main">
+    <div class="projects">
+      {% include section-header.html title="Projects" link="/projects" %}
+      <div class="featured-projects">
+        {% include project-card.html project=p1 %}
+        {% include project-card.html project=p2 %}
+      </div>
+      <div class="secondary-projects">
+        {% include project-card.html project=s1 %}
+        {% include project-card.html project=s2 %}
+        {% include project-card.html project=s3 %}
+      </div>
+    </div>
+
+    <div class="posts">
+      {% include section-header.html title="Blog" link="/posts" %}
+      <div class="posts-list">
+        {% for item in site.posts %}
+          {% include post-entry.html post=item %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {{ content }}
+
+    {% include footer-bar.html %}
+  </div>
+</div>
