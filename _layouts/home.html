@@ -25,6 +25,7 @@ title: Home
 <link rel="stylesheet" href="/assets/css/sidebar.css">
 <link rel="stylesheet" href="/assets/css/project-card.css">
 <link rel="stylesheet" href="/assets/css/section-header.css">
+<link rel="stylesheet" href="/assets/css/post-list.css">
 <link rel="stylesheet" href="/assets/css/post-entry.css">
 <link rel="stylesheet" href="/assets/css/footer-bar.css">
 
@@ -53,13 +54,6 @@ title: Home
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .posts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 4px 16px 4px 16px;
-  }
-
   @media (max-width: 768px) {
     .featured-projects {
         grid-template-columns: 1fr;
@@ -86,10 +80,7 @@ title: Home
 
   <div class="posts">
     {% include section-header.html title="Blog" link="/posts" %}
-    <div class="posts-list">
-      {% for item in site.posts %}
-        {% include post-entry.html post=item %}
-      {% endfor %}
-    </div>
+
+    {% include post-list.html %}
   </div>
 </div>
