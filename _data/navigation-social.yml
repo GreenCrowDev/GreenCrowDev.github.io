@@ -1,5 +1,14 @@
+- name: Twitter
+  link: https://twitter.com/GreenCrowDev
+
+- name: Bsky
+  link: https://bsky.app/profile/greencrowdev.bsky.social
+
+- name: Itch.io
+  link: https://greencrowdev.itch.io/
+
 - name: GitHub
   link: https://github.com/GreenCrowDev
 
-- name: Twitter
-  link: https://twitter.com/GreenCrowDev
+- name: LinkedIn
+  link: https://www.linkedin.com/in/pietrangelo-califano-463345309/
