@@ -1,0 +1,17 @@
+---
+---
+
+<link rel="stylesheet" href="/assets/css/page.css">
+<link rel="stylesheet" href="/assets/css/sidebar.css">
+<link rel="stylesheet" href="/assets/css/footer-bar.css">
+
+<div class="layout">
+  {% include sidebar.html %}
+
+  <div class="main">
+
+    {{ content }}
+
+    {% include footer-bar.html %}
+  </div>
+</div>

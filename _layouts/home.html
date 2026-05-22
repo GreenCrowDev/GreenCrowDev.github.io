@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Home
 ---
 
@@ -28,21 +29,7 @@ title: Home
 <link rel="stylesheet" href="/assets/css/footer-bar.css">
 
 <style>
-  h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-  }
-
-  body {
-    margin: 0;
-    font-family: monospace;
-  }
-
-  .layout {
-    display: flex;
-    height: 100vh;
-  }
-
-  .main {
+  .home-page {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -83,34 +70,26 @@ title: Home
   }
 </style>
 
-<div class="layout">
-  {% include sidebar.html %}
-
-  <div class="main">
-    <div class="projects">
-      {% include section-header.html title="Projects" link="/projects" %}
-      <div class="featured-projects">
-        {% include project-card.html project=p1 %}
-        {% include project-card.html project=p2 %}
-      </div>
-      <div class="secondary-projects">
-        {% include project-card.html project=s1 %}
-        {% include project-card.html project=s2 %}
-        {% include project-card.html project=s3 %}
-      </div>
+<div class="home-page">
+  <div class="projects">
+    {% include section-header.html title="Projects" link="/projects" %}
+    <div class="featured-projects">
+      {% include project-card.html project=p1 %}
+      {% include project-card.html project=p2 %}
     </div>
-
-    <div class="posts">
-      {% include section-header.html title="Blog" link="/posts" %}
-      <div class="posts-list">
-        {% for item in site.posts %}
-          {% include post-entry.html post=item %}
-        {% endfor %}
-      </div>
+    <div class="secondary-projects">
+      {% include project-card.html project=s1 %}
+      {% include project-card.html project=s2 %}
+      {% include project-card.html project=s3 %}
     </div>
+  </div>
 
-    {{ content }}
-
-    {% include footer-bar.html %}
+  <div class="posts">
+    {% include section-header.html title="Blog" link="/posts" %}
+    <div class="posts-list">
+      {% for item in site.posts %}
+        {% include post-entry.html post=item %}
+      {% endfor %}
+    </div>
   </div>
 </div>

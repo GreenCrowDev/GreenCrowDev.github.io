@@ -1,3 +1,13 @@
+.footer-bar h1,
+.footer-bar h2,
+.footer-bar h3,
+.footer-bar h4,
+.footer-bar h5,
+.footer-bar h6,
+.footer-bar p {
+  margin: 0;
+}
+
 .footer-bar {
   display: flex;
   justify-content: center;

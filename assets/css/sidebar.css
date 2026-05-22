@@ -1,3 +1,13 @@
+.sidebar h1,
+.sidebar h2,
+.sidebar h3,
+.sidebar h4,
+.sidebar h5,
+.sidebar h6,
+.sidebar p {
+  margin: 0;
+}
+
 .sidebar {
   width: 240px;
   background: #fff;
@@ -14,6 +24,10 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.sidebar .blog-title {
+  font-size: xx-large;
 }
 
 .sidebar .top p {

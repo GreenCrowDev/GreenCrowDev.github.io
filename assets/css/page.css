@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: monospace;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: #fff;
+
+  gap: 8px;
+}
