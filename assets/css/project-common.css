@@ -1,0 +1,16 @@
+.project-title {
+  font-size: x-large;
+  margin: 0;
+}
+
+.project-description {
+  font-size: 12px;
+  max-width: 90%;
+  color: black;
+  margin: 0;
+}
+
+.project-tags {
+  font-size: 12px;
+  color: black;
+}

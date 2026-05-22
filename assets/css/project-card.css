@@ -87,24 +87,17 @@
   opacity: 1;
 }
 
-.desc {
-  font-size: 12px;
-  max-width: 90%;
-  color: rgba(255,255,255);
+.project-description {
+  color: white;
 }
 
-.project-tags {
-  font-size: 12px;
-  color: rgba(255,255,255);
-}
-
-.desc,
+.project-description,
 .project-tags {
   opacity: 0;
   transition: opacity 0.25s ease;
 }
 
-.project-card:hover .desc,
+.project-card:hover .project-description,
 .project-card:hover .project-tags {
   opacity: 1;
 }

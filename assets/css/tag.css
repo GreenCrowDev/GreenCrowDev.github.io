@@ -1,0 +1,38 @@
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+
+  background-color: black;
+  color: white;
+
+  font-size: 12px;
+  font-weight: 900;
+  font-family: 'Segoe UI';
+  letter-spacing: 0.5px;
+}
+
+.tag-test {
+  background-color: #00ff00;
+  color: black;
+}
+
+.tag-godot {
+  background-color: #478cbf;
+}
+
+.tag-cpp {
+  background-color: #00599c;
+}
+
+.tag-procedural {
+  background-color: #9b59b6;
+}
+
+.tag-gameplay {
+  background-color: #fcba2b;
+  color: black;
+}
+
+.tag-tools {
+  background-color: #27ae60;
+}

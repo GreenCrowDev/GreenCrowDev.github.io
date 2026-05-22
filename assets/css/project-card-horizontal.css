@@ -1,0 +1,54 @@
+.project-card-horizontal {
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+
+.project-card-horizontal .project-image {
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-horizontal .project-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: var(--bg);
+  background-size: cover;
+  background-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.project-card-horizontal:hover .project-image::before {
+  transform: scale(1.08);
+}
+
+.project-card-horizontal:hover .project-title {
+  text-decoration: underline;
+}
+
+.project-card-horizontal .content {
+  border: 1px solid black;
+  border-left: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  flex: 1.5;
+  padding: 8px;
+}
+
+.project-card-horizontal:hover .content {
+  background-color: #eee;
+}
+
+.project-card-horizontal .content .extra {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
