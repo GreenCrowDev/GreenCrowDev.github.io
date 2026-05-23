@@ -3,17 +3,20 @@ layout: page
 title: Home
 ---
 
-{% assign p1 = site.projects | where: "slug", "test-project" | first %}
-{% assign p2 = site.projects | where: "slug", "test-project-2" | first %}
+{% assign p1name = "Test Project" %}
+{% assign p2name = "Test Project 3" %}
+
+{% assign p1 = site.projects | where: "title", p1name | first %}
+{% assign p2 = site.projects | where: "title", p2name | first %}
 
 {% assign all = site.projects | sort: "date" | reverse %}
 
-{% assign exclude_slugs = "test-project,another-project" | split: "," %}
+{% assign exclude = p1name | append: "," | append: p2name | split: "," %}
 
 {% assign secondary = "" | split: "," %}
 
 {% for project in all %}
-  {% unless exclude_slugs contains project.slug %}
+  {% unless exclude contains project.title %}
     {% assign secondary = secondary | push: project %}
   {% endunless %}
 {% endfor %}

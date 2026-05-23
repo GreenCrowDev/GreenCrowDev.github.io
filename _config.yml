@@ -30,7 +30,7 @@ github_username:  GreenCrowDev
 
 collections:
   projects:
-    output: false
+    output: true
 
 # Build settings
 theme: minima
