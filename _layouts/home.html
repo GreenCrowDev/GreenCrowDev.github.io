@@ -3,8 +3,8 @@ layout: page
 title: Home
 ---
 
-{% assign p1name = "Test Project" %}
-{% assign p2name = "Test Project 3" %}
+{% assign p1name = "Untitled Fishing Game" %}
+{% assign p2name = "Liminal Space Basketball" %}
 
 {% assign p1 = site.projects | where: "title", p1name | first %}
 {% assign p2 = site.projects | where: "title", p2name | first %}
@@ -21,9 +21,11 @@ title: Home
   {% endunless %}
 {% endfor %}
 
-{% assign s1 = secondary[0] %}
-{% assign s2 = secondary[1] %}
-{% assign s3 = secondary[2] %}
+{% if secondary.size >= 3 %}
+  {% assign s1 = secondary[0] %}
+  {% assign s2 = secondary[1] %}
+  {% assign s3 = secondary[2] %}
+{% endif %}
 
 <link rel="stylesheet" href="/assets/css/sidebar.css">
 <link rel="stylesheet" href="/assets/css/project-card.css">
@@ -75,9 +77,15 @@ title: Home
       {% include project-card.html project=p2 %}
     </div>
     <div class="secondary-projects">
-      {% include project-card.html project=s1 %}
-      {% include project-card.html project=s2 %}
-      {% include project-card.html project=s3 %}
+      {% if s1 %}
+        {% include project-card.html project=s1 %}
+      {% endif %}
+      {% if s2 %}
+        {% include project-card.html project=s2 %}
+      {% endif %}
+      {% if s3 %}
+        {% include project-card.html project=s3 %}
+      {% endif %}
     </div>
   </div>
 
