@@ -31,6 +31,8 @@ github_username:  GreenCrowDev
 collections:
   projects:
     output: true
+  tools:
+    output: true
 
 # Build settings
 theme: minima

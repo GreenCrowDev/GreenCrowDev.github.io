@@ -1,5 +1,8 @@
 - name: Projects
   link: /projects/
 
+- name: Tools
+  link: /tools/
+
 - name: Blog
   link: /posts/

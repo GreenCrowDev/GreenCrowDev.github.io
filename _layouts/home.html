@@ -3,6 +3,8 @@ layout: page
 title: Home
 ---
 
+<!-- Project Cards -->
+
 {% assign p1name = "Untitled Fishing Game" %}
 {% assign p2name = "Liminal Space Basketball" %}
 
@@ -26,6 +28,10 @@ title: Home
   {% assign s2 = secondary[1] %}
   {% assign s3 = secondary[2] %}
 {% endif %}
+
+<!-- Tool Cards -->
+
+{% assign tools = site.tools | sort: "date" | reverse %}
 
 <link rel="stylesheet" href="/assets/css/sidebar.css">
 <link rel="stylesheet" href="/assets/css/project-card.css">
@@ -59,6 +65,11 @@ title: Home
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
   @media (max-width: 768px) {
     .featured-projects {
         grid-template-columns: 1fr;
@@ -86,6 +97,16 @@ title: Home
       {% if s3 %}
         {% include project-card.html project=s3 %}
       {% endif %}
+    </div>
+  </div>
+
+  <div class="tools">
+    {% include section-header.html title="Tools" link="/tools" %}
+
+    <div class="tool-grid">
+      {% for t in tools %}
+        {% include project-card.html project=t %}
+      {% endfor %}
     </div>
   </div>
 

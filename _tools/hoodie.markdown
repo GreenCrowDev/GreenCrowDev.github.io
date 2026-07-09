@@ -1,5 +1,5 @@
 ---
-layout: tool
+layout: project
 title: "Hoodie"
 date: 2026-07-08
 tags: [godot, c++, procedural]
